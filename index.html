@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular WebSql Test</title>
+    <script src="libs/angular.js"></script>
+    <script src="libs/angular-websql.js"></script>
+    <script src="libs/angular-local-storage.js"></script>
+
+
+    <script src="app.js"></script>
+
+    <script src="common/common.module.js"></script>
+    <script src="common/appStartService.js"></script>
+    <script src="common/webSqlDatabaseService.js"></script>
+    <script src="common/createTablesService.js"></script>
+    <script src="common/seedTablesService.js"></script>
+
+    <script src="common/usersService.js"></script>
+    <script src="common/subjectsService.js"></script>
+
+    <!--modelTest Module-->
+    <script src="modelTest/modelTest.module.js"></script>
+    <script src="modelTest/modelTestCtrl.js"></script>
+
+
+</head>
+<body ng-app="websqlTest">
+<div ng-controller="modelTestCtrl as vm">
+    <div>
+        <h1>users</h1>
+        <p ng-repeat="user in vm.users">{{user.userName}}</p>
+    </div>
+    <div>
+        <h1>subjects</h1>
+        <p ng-repeat="subject in vm.subjects">{{subject.subjectName}}</p>
+    </div>
+
+</div>
+</body>
+</html>

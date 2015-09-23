@@ -14,11 +14,13 @@
 
         // Imp
         function startApp() {
+            var db = openDatabase('testtest', '1.0', 'Test database', 1024 *2);
+            alert(db);
             // check localStorage for appReady
             // if appReady is present or true
             // then no need to create and seed database
             var appReady = localStorageService.get('appReady');
-            alert(appReady);
+
             if (!appReady) {
                 // Create database
                 webSqlDatabaseService.createDatabase();

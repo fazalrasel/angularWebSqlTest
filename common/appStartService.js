@@ -20,9 +20,9 @@
             // check localStorage for appReady
             // if appReady is present or true
             // then no need to create and seed database
-            var appReady = localStorageService.get('appReady');
+            var readyApp = localStorageService.get('readyApp');
 
-            if (!appReady) {
+            if (!readyApp) {
 
                 // creating table
                 createTablesService.createTables();
@@ -31,7 +31,7 @@
                 seedTablesService.seedTables();
 
                 // set the appReady to true
-                localStorageService.set('appReady', true);
+                localStorageService.set('readyApp', true);
             }
         }
 

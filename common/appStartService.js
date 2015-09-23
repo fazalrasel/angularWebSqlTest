@@ -14,8 +14,12 @@
 
         // Imp
         function startApp() {
-            var db = openDatabase('testtest', '1.0', 'Test database', 1024 *2);
-            alert(db);
+            var db = openDatabase('wegenius', '1.0', 'Test DB', 2 * 1024 * 1024);
+            db.transaction(function (tx) {
+                tx.executeSql('SELECT * FROM users', [], function (tx, results) {
+                    alert(results);
+                })
+            })
             // check localStorage for appReady
             // if appReady is present or true
             // then no need to create and seed database

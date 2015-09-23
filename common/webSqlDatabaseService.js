@@ -13,13 +13,14 @@
         return webSqlDatabase;
 
         // Imp
+        var db;
 
         function createDatabase() {
-            $webSql.openDatabase('wegenius', '1.0', 'Test DB', 2 * 1024 * 1024);
+            db = $webSql.openDatabase('wegenius', '1.0', 'Test DB', 2 * 1024 * 1024);
         }
 
         function returnDB() {
-            return $webSql.openDatabase('wegenius', '1.0', 'Test DB', 2 * 1024 * 1024);
+            return db;
         }
     }
 

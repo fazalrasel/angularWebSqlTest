@@ -30,7 +30,7 @@
                         db.insert('subjects', {
                             "id": subject.id,
                             "subjectName": subject.subjectName
-                        });
+                        })
                     });
                     // seeding chapters table
                     angular.forEach(data.chapters, function (chapter) {
@@ -43,18 +43,18 @@
 
 
                      //seeding questions table
-                    //angular.forEach(data.questions, function (question) {
-                    //    db.insert('questions', {
-                    //        "id": question.id,
-                    //        "questionType": question.questionType,
-                    //        "question": question.question,
-                    //        "subjectId": question.subjectId,
-                    //        "chapterId": question.chapterId,
-                    //        "ans": question.ans,
-                    //        "optionNonAnswers": JSON.stringify(question.optionNonAnswers),
-                    //        "optionAnswers": JSON.stringify(question.optionAnswers)
-                    //    });
-                    //});
+                    angular.forEach(data.questions, function (question) {
+                        db.insert('questions', {
+                            "id": question.id,
+                            "questionType": question.questionType,
+                            "question": question.question,
+                            "subjectId": question.subjectId,
+                            "chapterId": question.chapterId,
+                            "ans": question.ans,
+                            "optionNonAnswers": JSON.stringify(question.optionNonAnswers),
+                            "optionAnswers": JSON.stringify(question.optionAnswers)
+                        });
+                    });
 
                 })
 

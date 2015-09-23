@@ -14,14 +14,15 @@
 
         // Imp
         function startApp() {
+            // Create database
+            webSqlDatabaseService.createDatabase();
+
             // check localStorage for appReady
             // if appReady is present or true
             // then no need to create and seed database
-            //var appReady = localStorageService.get('appReady');
+            var appReady = localStorageService.get('appReady');
 
-            //if (!appReady) {
-                // Create database
-                webSqlDatabaseService.createDatabase();
+            if (!appReady) {
 
                 // creating table
                 createTablesService.createTables();
@@ -31,7 +32,7 @@
 
                 // set the appReady to true
                 localStorageService.set('appReady', true);
-            //}
+            }
         }
 
     }

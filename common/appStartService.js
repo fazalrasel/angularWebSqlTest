@@ -18,7 +18,7 @@
             // if appReady is present or true
             // then no need to create and seed database
             var appReady = localStorageService.get('appReady');
-
+            alert(appReady);
             if (!appReady) {
                 // Create database
                 webSqlDatabaseService.createDatabase();
